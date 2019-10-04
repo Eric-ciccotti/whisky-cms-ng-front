@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: rgb(66, 66, 66);
+}
+
+mat-progress-spinner {
+  margin: 5vh auto;
+}
+
+a:visited,
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.no-margin {
+  margin-left: -16px;
+}

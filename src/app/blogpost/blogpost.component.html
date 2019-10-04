@@ -1,0 +1,25 @@
+<mat-card class="example-card" *ngIf="(blogPost$ | async) as bp; else loading">
+<!-- si on réussi a récuperer la valeur de l'observable ( on lui donne un alias bp) ; sinon on charge le template loading-->
+  <mat-card-header>
+    <mat-card-title class="no-margin">{{ bp.title }}</mat-card-title>
+    <mat-card-subtitle>{{ bp.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ bp.image }}" alt="{{ bp.title}}">
+  <mat-card-content>
+    <p>
+      {{ bp.content }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #loading>
+  <mat-progress-spinner
+      color="primary"
+      mode="indeterminate"
+      value="50">
+  </mat-progress-spinner>
+</ng-template>
